@@ -1,10 +1,12 @@
 import "./App.css";
-import MapVisible from "./components/MapVisible";
+import MapHtmlToPngToPdf from "./components/MapHtmlToPngToPdf";
+// import MapVisible from "./components/MapVisible";
 
 function App() {
   return (
     <>
-      <MapVisible />
+      {/* <MapVisible /> */}
+      <MapHtmlToPngToPdf />
     </>
   );
 }
