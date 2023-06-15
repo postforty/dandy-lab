@@ -49,4 +49,7 @@
       + "If you're not using web, please ensure you remove the "web" string from the platforms array in the project Expo config."
     + 관련 의존성 모듈 설치하여 해결
       + ``` npx expo install react-native-web@~0.18.9 react-dom@18.1.0 @expo/webpack-config@^0.17.2 ```
+  + 디바이스 설정
+    + 확인: adb devices
+    + 포트 변경: adb reverse tcp:8081 tcp:8081
   
