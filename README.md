@@ -52,4 +52,6 @@
   + 디바이스 설정
     + 확인: adb devices
     + 포트 변경: adb reverse tcp:8081 tcp:8081
-  
+  + 참고
+    + https://stackoverflow.com/questions/67476226/is-there-a-ar-library-that-is-available-to-use-with-expo-and-react-native
+
