@@ -12,4 +12,4 @@
     + android/build.gradle 에서 classpath 'com.android.tools.build:gradle:7.3.0' → classpath 'com.android.tools.build:gradle:7.1.2'
     + 참고: https://theplace.tistory.com/64 
 
-+ 2023-06-20: 카메라 화면에 큐브를 띄우는 프로젝트 성공
++ 2023-06-20: 카메라 화면에 큐브를 띄우기 성공
