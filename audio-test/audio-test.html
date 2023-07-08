@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<style>
+    .box1 {
+        width: 100%;
+        height: 500px;
+        background-color: #98FF98;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .box2 {
+        width: 100%;
+        height: 200px;
+        background-color: #FF7F50;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .box3 {
+        width: 100%;
+        height: 300px;
+        background-color: #C8A2C8;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 20%;
+        top: 20%;
+        width: 200px;
+        height: 100%;
+        overflow: auto;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+    }
+
+    .modal-content {
+        /* background-color: #fefefe; */
+        margin: 15% auto;
+        padding: 20px;
+        /* border: 1px solid #888; */
+        width: 80%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <button id="openModal">모달 열기</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div id="closeModal" class="close">&times;</div>
+            <img src="sample.png" alt="캐릭터 이미지" width="200">
+        </div>
+    </div>
+
+    <audio id="modalSound">
+        <source src="sample.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="box1">광고 영역 1</div>
+    <div class="box2">광고 영역 2</div>
+    <div class="box3">광고 영역 3</div>
+    <div class="box1">광고 영역 1</div>
+    <div class="box2">광고 영역 2</div>
+    <div class="box3">광고 영역 3</div>
+</body>
+
+<script>
+    // [이슈]
+    // 해당 에러는 브라우저의 자동 재생 정책으로 인해 발생합니다. 최신 브라우저에서는 사용자 상호작용 없이 자동으로 오디오를 재생하는 것을 방지하기 위해 이러한 정책이 적용됩니다. 따라서, 사용자의 상호작용 없이 자동 재생되는 소리는 에러를 발생시키게 됩니다.
+    // 이러한 정책을 우회하기 위해서는 사용자의 상호작용 이후에 소리를 자동으로 재생하도록 코드를 수정해야 합니다. 예를 들어, 사용자가 버튼을 클릭한 후 스크롤하면 모달이 열리고 소리가 재생하도록 설정할 수 있습니다.
+    const openModalBtn = document.getElementById("openModal");
+    const closeModalBtn = document.getElementById("closeModal");
+    const modal = document.getElementById("myModal");
+    const modalSound = document.getElementById("modalSound");
+
+    function openModal() {
+        modal.style.display = "block";
+        modalSound.play();
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    openModalBtn.addEventListener("click", function () {
+        modalSound.play();
+        setTimeout(openModal, 0);
+    });
+    closeModalBtn.addEventListener("click", closeModal);
+
+    window.addEventListener("scroll", function () {
+        if (modal.style.display !== "block") {
+            modalSound.play();
+            setTimeout(openModal, 0);
+            window.removeEventListener("scroll", handleScroll);
+        }
+    });
+
+
+</script>
+
+</html>
