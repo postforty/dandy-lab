@@ -1,10 +1,19 @@
 import "package:flutter/material.dart";
+import "package:netflix_app/model/model_movie.dart";
 
 class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Movie> movies = [
+    Movie.fromMap({
+      'title': 'EXPO 홍보영상관 개관',
+      'keyword': '2030/expo',
+      'poster': 'test_1.png',
+      'like': false
+    })
+  ];
   @override
   void initState() {
     super.initState();
