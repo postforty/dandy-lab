@@ -13,7 +13,25 @@ class _HomeScreenState extends State<HomeScreen> {
       'keyword': '2030/expo',
       'poster': 'test_1.png',
       'like': false
-    })
+    }),
+    Movie.fromMap({
+      'title': 'EXPO 홍보영상관 개관',
+      'keyword': '2030/expo',
+      'poster': 'test_1.png',
+      'like': false
+    }),
+    Movie.fromMap({
+      'title': 'EXPO 홍보영상관 개관',
+      'keyword': '2030/expo',
+      'poster': 'test_1.png',
+      'like': false
+    }),
+    Movie.fromMap({
+      'title': 'EXPO 홍보영상관 개관',
+      'keyword': '2030/expo',
+      'poster': 'test_1.png',
+      'like': false
+    }),
   ];
   @override
   void initState() {
